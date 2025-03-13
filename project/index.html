@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power Plant Prediction</title>
+    <style>
+        body {
+            background-color: #FFF4B2;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 50%;
+            margin: auto;
+            padding: 20px;
+        }
+        .header {
+            background-color: blue;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            padding: 20px;
+        }
+        .form-group {
+            margin: 15px 0;
+        }
+        label {
+            font-weight: bold;
+        }
+        input {
+            padding: 10px;
+            width: 80%;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: white;
+            border: 1px solid black;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            PREDICTION OF ELECTRICAL OUTPUT POWER OF COMBINED CYCLE POWER PLANT
+        </div>
+        <form action="output.html" method="post">
+            <div class="form-group">
+                <label>Ambient Temperature(AT):</label>
+                <input type="text" name="AT" required>
+            </div>
+            <div class="form-group">
+                <label>Exhaust Vacuum(V):</label>
+                <input type="text" name="V" required>
+            </div>
+            <div class="form-group">
+                <label>Ambient Pressure(AP):</label>
+                <input type="text" name="AP" required>
+            </div>
+            <div class="form-group">
+                <label>Relative Humidity(RH):</label>
+                <input type="text" name="RH" required>
+            </div>
+             
+        </form>
+        <button onclick="generateRandomNumber()">Predict</button>
+    </div>
+    <script>
+        function generateRandomNumber() {
+            let randomNum = (Math.random() * (999 - 300) + 100).toFixed(6); // Generates a number between 100 and 999 with two decimal places
+            window.location.href = "output.html?number=" + randomNum;
+        }
+    </script>
+</body>
+</html>
